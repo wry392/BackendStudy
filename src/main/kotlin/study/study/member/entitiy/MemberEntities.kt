@@ -1,18 +1,10 @@
 package study.study.member.entitiy
 
-import jakarta.persistence.Column
-import jakarta.persistence.Entity
-import jakarta.persistence.EnumType
-import jakarta.persistence.Enumerated
-import jakarta.persistence.GeneratedValue
-import jakarta.persistence.GenerationType
-import jakarta.persistence.Id
-import jakarta.persistence.Table
-import jakarta.persistence.Temporal
-import jakarta.persistence.TemporalType
-import jakarta.persistence.UniqueConstraint
 import study.study.common.status.Gender
+import jakarta.persistence.*
+import study.study.common.status.Dorm
 import java.time.LocalDate
+
 
 @Entity
 @Table(
@@ -34,15 +26,19 @@ class Member(
     @Column(nullable = false, length = 10)
     val name: String,
 
-    @Column(nullable = false)
-    @Temporal(TemporalType.DATE)
-    val birthDate: LocalDate,
+    //@Column(nullable = false)
+    //@Temporal(TemporalType.DATE)
+    //val birthDate: LocalDate,
 
-    @Column(nullable = false, length = 5)
-    @Enumerated(EnumType.STRING)
-    val gender: Gender,
+    //@Column(nullable = false, length = 5)
+    //@Enumerated(EnumType.STRING)
+    //val gender: Gender,
 
     @Column(nullable = false, length = 30)
     val email: String,
+
+    @Column(nullable = false, length = 20)
+    @Enumerated(EnumType.STRING)
+    val dorm: Dorm,
 )
 
