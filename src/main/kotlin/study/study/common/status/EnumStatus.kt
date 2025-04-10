@@ -20,3 +20,7 @@ enum class Dorm(val desc: String) {
     GYEONGSANG13("경상13"),
     GYEONGSANG14("경상14")
 }
+
+enum class ROLE {
+    MEMBER
+}
