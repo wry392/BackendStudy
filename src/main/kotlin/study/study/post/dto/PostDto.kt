@@ -26,7 +26,7 @@ data class BoardDtoRequest(
         get() = _content!!.toString()
 
 
-    fun toEntity() : Board = Board(
-        null,title,content,writer,likes,createDate
+    fun toEntity(writer: String) : Board = Board(
+        null,title,content,writer = writer,likes,createDate
     )
 }

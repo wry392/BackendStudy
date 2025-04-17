@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController
 import study.study.post.dto.BoardDtoRequest
 import study.study.post.service.BoardService
 import study.study.common.dto.BaseResponse
+import java.security.Principal
 
 @RestController
 @RequestMapping("/api/board")
@@ -19,8 +20,9 @@ class BoardController (
      * 게시글 작성
      */
     @PostMapping("/")
-    fun boardPost(@RequestBody @Valid boardDtoRequest: BoardDtoRequest): BaseResponse<String>{
-        val result = boardService.boardPost(boardDtoRequest)
+    fun boardPost(@RequestBody @Valid boardDtoRequest: BoardDtoRequest, principal: Principal): BaseResponse<String>{
+        val userName = principal.name
+        val result = boardService.boardPost(boardDtoRequest, userName)
         return BaseResponse(result)
     }
 }

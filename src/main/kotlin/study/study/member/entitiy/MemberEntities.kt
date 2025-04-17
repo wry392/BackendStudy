@@ -44,7 +44,7 @@ class Member(
         this.format(DateTimeFormatter.ofPattern("yyyyMMdd"))
 
     fun toDto(): MemberDtoResponse =
-        MemberDtoResponse(id!!, loginId, name, /*birthDate.formatDate(), gender.desc,*/ email)
+        MemberDtoResponse(id!!, loginId, name,/*birthDate.formatDate(), gender.desc,*/email)
 }
 
 // 추가
